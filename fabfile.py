@@ -220,6 +220,7 @@ def deploy_medfuturo():
     local("git commit -m 'changes'")
 
     local("git push")
+    
     with cd('/home/raony/webapps/medfuturo/medfuturo/'):
         run('git pull')
         run('../apache/bin/restart')
