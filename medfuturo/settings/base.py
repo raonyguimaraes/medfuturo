@@ -60,9 +60,12 @@ INSTALLED_APPS = (
 
     # Application base, containing global templates.
     'base',
+    'registration',
 
     # Local apps, referenced via appname
 )
+
+ACCOUNT_ACTIVATION_DAYS = 7 
 
 # Place bcrypt first in the list, so it will be the default password hashing
 # mechanism

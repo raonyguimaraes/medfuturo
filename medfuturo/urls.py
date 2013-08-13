@@ -18,6 +18,9 @@ urlpatterns = patterns('',
     #url(r'^', include('debug_toolbar_user_panel.urls')),
     url(r'^bad/$', bad),
     url(r'', include('base.urls')),
+    url(r'^accounts/', include('registration.urls')),
+
+
 )
 
 ## In DEBUG mode, serve media files through Django.

@@ -14,8 +14,8 @@ framework.
 
 """
 import os
-#import sys
-#import site
+import sys
+import site
 #import subprocess
 
 
@@ -48,6 +48,8 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../")
 
 # Add the app code to the path
 #sys.path.append(PROJECT_ROOT)
+site.addsitedir('/home/raony/.virtualenvs/medfuturo/lib/python2.7')
+
 
 os.environ['CELERY_LOADER'] = 'django'
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "medfuturo.settings")
