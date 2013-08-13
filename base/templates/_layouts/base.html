@@ -105,12 +105,22 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="navbar-form pull-right">
-                            <input class="span2" type="text" placeholder="Email">
-                            <input class="span2" type="password" placeholder="Password">
+                        {% if user.is_authenticated %}
+                        <div style="color:#fff;">
+                        <div class="navbar-form pull-right">
+                        Hello {{user}}
+                        <a class="btn btn-primary" href="{% url "auth_logout" %}?next=/">Logout</a>
+                        </div>
+
+                        </div>
+                        {% else %}
+                        <form  class="navbar-form pull-right" method="post" action="{% url "auth_login" %}">{% csrf_token %} 
+                            <input class="span2" id="id_username" type="text" placeholder="Username" name="username">
+                            <input class="span2" id="id_password" name="password" type="password" placeholder="Password">
                             <button type="submit" class="btn">Sign in</button>
-                             <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Sign Up</a>
+                            <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Sign Up</a>
                         </form>
+                        {% endif %}
                     </div><!--/.nav-collapse -->
                 </div>
             </div>

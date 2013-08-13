@@ -19,8 +19,11 @@ env.code_dir = '/srv/www/medfuturo'
 env.project_dir = '/srv/www/medfuturo/medfuturo'
 env.static_root = '/srv/www/medfuturo/static/'
 env.virtualenv = '/srv/www/medfuturo/.virtualenv'
-env.code_repo = 'git@github.com:user/medfuturo.git'
+env.code_repo = 'git@github.com:raonyguimaraes/medfuturo.git'
 env.django_settings_module = 'medfuturo.settings'
+
+env.user  = 'raony'
+env.hosts = ['webfaction']
 
 # Python version
 PYTHON_BIN = "python2.7"
@@ -208,3 +211,15 @@ def deploy():
     update_database()
     build_static()
     webserver_start()
+
+
+@task
+def deploy_medfuturo():
+    print 'Hello World'
+    local("git add .")
+    local("""git commit -m 'changes' """)
+
+    local("git push'")
+    with cd('/home/raony/webapps/medfuturo/medfuturo/'):
+        run('git pull')
+        run('../apache/bin/restart')
