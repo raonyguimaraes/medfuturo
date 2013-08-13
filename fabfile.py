@@ -217,10 +217,10 @@ def deploy():
 def deploy_medfuturo():
     print 'Hello World'
     local("git add .")
-    local("git commit -m 'changes'")
+    local("""git commit -m 'changes' """)
 
     local("git push")
-    
+
     with cd('/home/raony/webapps/medfuturo/medfuturo/'):
         run('git pull')
         run('../apache/bin/restart')
