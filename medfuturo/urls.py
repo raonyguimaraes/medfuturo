@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^bad/$', bad),
     url(r'', include('base.urls')),
     url(r'^accounts/', include('registration.urls')),
+    url(r'^dashboard/', include('dashboard.urls')),
 
 
 )

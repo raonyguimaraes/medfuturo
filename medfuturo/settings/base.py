@@ -61,12 +61,13 @@ INSTALLED_APPS = (
     # Application base, containing global templates.
     'base',
     'registration',
+    'dashboard',
 
     # Local apps, referenced via appname
 )
 
 ACCOUNT_ACTIVATION_DAYS = 7 
-
+LOGIN_REDIRECT_URL = '/dashboard/'
 # Place bcrypt first in the list, so it will be the default password hashing
 # mechanism
 PASSWORD_HASHERS = (
