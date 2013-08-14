@@ -211,7 +211,7 @@ def deploy():
     update_database()
     build_static()
     webserver_start()
-
+ 
 
 @task
 def deploy_medfuturo():
