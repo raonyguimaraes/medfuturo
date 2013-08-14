@@ -223,4 +223,5 @@ def deploy_medfuturo():
 
     with cd('/home/raony/webapps/medfuturo/medfuturo/'):
         run('git pull')
-        run('/home/raony/webapps/medfuturo/apache2/bin/restart')
+        workon = 'workon medfuturo && '
+        run(workon + '/home/raony/webapps/medfuturo/apache2/bin/restart')
