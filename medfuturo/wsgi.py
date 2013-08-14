@@ -49,7 +49,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__) + "../../")
 # Add the app code to the path
 #sys.path.append(PROJECT_ROOT)
 site.addsitedir('/home/raony/.virtualenvs/medfuturo/lib/python2.7')
-site.addsitedir('/home/raony/webapps/medfuturo/lib/python2.7') 
+site.addsitedir('/home/raony/webapps/medfuturo/lib/python2.7')
 
 
 os.environ['CELERY_LOADER'] = 'django'
