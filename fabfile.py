@@ -217,7 +217,7 @@ def deploy():
 def deploy_medfuturo():
     print 'Hello World'
     local("git add .")
-    local("""git commit -m 'changes' """)
+    local("""git commit -m "changes" """)
 
     local("git push")
 
