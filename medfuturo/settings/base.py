@@ -275,7 +275,7 @@ ALLOWED_HOSTS = []
 # CELERY_RESULT_BACKEND = 'amqp'
 
 INTERNAL_IPS = ('127.0.0.1')
-
+ 
 # Enable these options for memcached
 #CACHE_BACKEND= "memcached://127.0.0.1:11211/"
 #CACHE_MIDDLEWARE_ANONYMOUS_ONLY=True
