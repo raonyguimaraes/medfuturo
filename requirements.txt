@@ -3,3 +3,4 @@
 -r requirements/production.txt
 django-registration
 psycopg2
+beautifulsoup4

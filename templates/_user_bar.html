@@ -1,0 +1,47 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">Medicina do Futuro</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Nav header</li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        {% if user.is_authenticated %}
+                        <div style="color:#fff;">
+                        <div class="navbar-form pull-right">
+                        Hello {{user}}
+                        <a class="btn btn-primary" href="{% url "auth_logout" %}?next=/">Logout</a>
+                        </div>
+
+                        </div>
+                        {% else %}
+                        <form  class="navbar-form pull-right" method="post" action="{% url "auth_login" %}">{% csrf_token %} 
+                            <input class="span2" id="id_username" type="text" placeholder="Username" name="username">
+                            <input class="span2" id="id_password" name="password" type="password" placeholder="Password">
+                            <button type="submit" class="btn">Sign in</button>
+                            <a href="#myModal" role="button" class="btn btn-primary" data-toggle="modal">Sign Up</a>
+                        </form>
+                        {% endif %}
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
